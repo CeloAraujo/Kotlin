@@ -8,17 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aula05.model.Pessoa
 import java.text.DecimalFormat
 
-class ListarPessoaAdapter(private val pessoas:List<Pessoa>)
-    : RecyclerView.Adapter<ListarPessoaAdapter.ViewHolder>() {
-    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        val nomePessoa:TextView= itemView.findViewById(R.id.nome_pessoa)
-        val idadePessoa:TextView= itemView.findViewById(R.id.idade_pessoa)
-        val profissaoPessoa:TextView= itemView.findViewById(R.id.profissao_pessoa)
-        val alturaPessoa:TextView= itemView.findViewById((R.id.altura_pessoa))
+class ListarPessoaAdapter(private val pessoas: List<Pessoa>) :
+    RecyclerView.Adapter<ListarPessoaAdapter.ViewHolder>() {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val nomePessoa: TextView = itemView.findViewById(R.id.nome_pessoa)
+        val idadePessoa: TextView = itemView.findViewById(R.id.idade_pessoa)
+        val profissaoPessoa: TextView = itemView.findViewById(R.id.profissao_pessoa)
+        val alturaPessoa: TextView = itemView.findViewById((R.id.altura_pessoa))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView =LayoutInflater.from(parent.context).inflate(R.layout.pessoa_activity, parent,false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.pessoa_activity, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -39,4 +40,4 @@ class ListarPessoaAdapter(private val pessoas:List<Pessoa>)
 
     override fun getItemCount(): Int = pessoas.size
 
-    }
+}
